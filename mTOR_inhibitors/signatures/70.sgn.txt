@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+KLHL24	ENSG00000114796	1.065202	3.769989e-08	0.0009643255

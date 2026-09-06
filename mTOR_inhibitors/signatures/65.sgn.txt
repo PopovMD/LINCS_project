@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+BLOC1S5-TXNDC5	ENSG00000259040	-22.46437	2.240728e-11	5.832838e-07

@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+UBALD2	ENSG00000185262	1.330854	1.292765e-07	0.002422642

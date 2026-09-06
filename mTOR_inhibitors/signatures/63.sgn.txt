@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+PCDHA1	ENSG00000204970	-21.72416	1.00429e-10	2.483107e-06

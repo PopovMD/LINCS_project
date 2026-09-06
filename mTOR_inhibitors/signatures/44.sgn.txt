@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+RP11-51F16.8	ENSG00000125695	-21.53924	5.106261e-11	1.313381e-06

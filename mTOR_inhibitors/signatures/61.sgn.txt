@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+AREGB	ENSG00000205595	5.944028	8.318772e-13	2.220197e-08

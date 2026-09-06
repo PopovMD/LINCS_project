@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+SERF1A	ENSG00000172058	2.942673	2.671257e-07	0.003568799

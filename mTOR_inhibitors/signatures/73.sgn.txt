@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+INS-IGF2	ENSG00000129965	-22.86667	1.016725e-11	2.480505e-07
