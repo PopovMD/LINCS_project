@@ -5,6 +5,7 @@
 # perturbagen_group  ---  name of signatures perturbagen's group (compulsory option), e.g. MEK, mTOR, PI3K...
 # --project_path  ---  path to a directory with the whole project
 # --out_folder  ---  NAME of out-folder, where will be located obtained results of this script. the location of this folder has already been determined by the script.
+# --sng_folder --- NAME of a folder with all signatures, each signature in its own file (with strict-form table of DEGs)
 #
 ################################################################
 
@@ -110,6 +111,9 @@ parser.add_argument("-project_path", type=str,
 parser.add_argument("-out_folder", type=str,
                     default="L1000_results_with_empty_files",
                     help="The NAME of out-folder, where will be located obtained results of this script. the location of this folder has already been determined by the script.")
+parser.add_argument("--sgn_folder", type=str,
+                    default="signatures",
+                    help="The NAME of a folder with all signatures, each signature in its own file (with strict-form table of DEGs).")
 
 # Считываем аргументы
 args = parser.parse_args()
@@ -125,7 +129,7 @@ if args.out_folder != "":
 L1000FWD_URL = 'https://maayanlab.cloud/l1000fwd/'
 
 
-sgns_dir = f"/{project_folder_path}/{pert_grp}_inhibitors/signatures"
+sgns_dir = f"/{project_folder_path}/{pert_grp}_inhibitors/{str(args.sgn_folder)}"
 out_dir = f"/{project_folder_path}/{pert_grp}_inhibitors/L1000/{algorithm_results_folder_name}"
 logs = f"/{project_folder_path}/{pert_grp}_inhibitors/L1000/l1000.logs.txt"
 txt_files = [f for f in os.listdir(sgns_dir) if f.endswith('.txt')]
