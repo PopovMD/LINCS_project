@@ -240,7 +240,7 @@ def get_l2s2_valid_genes(genes: list[str]):
 #####################
 
 # Создаем парсер
-parser = argparse.ArgumentParser(description="Программа для приветствия пользователя.")
+parser = argparse.ArgumentParser(description="Hello.")
 # обязательный аргумент
 parser.add_argument("perturbagen_group", type=str, help="The name of the perturbagen group, to which belong observed signatures.")
 # необязательный флаг/опция
