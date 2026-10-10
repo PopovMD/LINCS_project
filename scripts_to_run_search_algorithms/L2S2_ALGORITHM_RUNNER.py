@@ -5,14 +5,20 @@
 # perturbagen_group  ---  name of signatures perturbagen's group (compulsory option), e.g. MEK, mTOR, PI3K...
 # --project_path  ---  path to a directory with the whole project
 # --out_folder  ---  NAME of out-folder, where will be located obtained results of this script. the location of this folder has already been determined by the script.
+# --sng_folder --- NAME of a folder with all signatures, each signature in its own file (with strict-form table of DEGs)
 #
 ################################################################
+
+# LAUNCH
+# python3 /Users/svetlana/Desktop/CMap_2025-26/folder_to_git/scripts_to_run_search_algorithms/L2S2_ALGORITHM_RUNNER.py CDK --project_path /Users/svetlana/Desktop/CMap_2025-26/folder_to_git --out_folder L2S2_results_defaults --sgn_folder signatures_defaults &> /Users/svetlana/Desktop/CMap_2025-26/CDK_inhibitors/L2S2.logs.txt
 
 
 
 
 import pandas as pd
 import requests
+from email.policy import default
+# from future.backports.email.policy import default
 from requests.exceptions import HTTPError
 import json
 import sys
@@ -234,32 +240,35 @@ def get_l2s2_valid_genes(genes: list[str]):
 #####################
 
 # Создаем парсер
-parser = argparse.ArgumentParser(description="Программа для приветствия пользователя.")
+parser = argparse.ArgumentParser(description="Hello.")
 # обязательный аргумент
-parser.add_argument("perturbagen_group", type=str, help="The name of the perturbagen group, to which belong observed signatures")
+parser.add_argument("perturbagen_group", type=str, help="The name of the perturbagen group, to which belong observed signatures.")
 # необязательный флаг/опция
-parser.add_argument("-project_path", type=str,
+parser.add_argument("--project_path", type=str,
                     default="Users/svetlana/Desktop/CMap_2025-26/",
-                    help="Path to the folder with the whole project")
-parser.add_argument("-out_folder", type=str,
+                    help="Path to the folder with the whole project.")
+parser.add_argument("--out_folder", type=str,
                     default="L2S2_results_20000",
                     help="The NAME of out-folder, where will be located obtained results of this script. the location of this folder has already been determined by the script.")
+parser.add_argument("--sgn_folder", type=str,
+                    default="signatures",
+                    help="The NAME of a folder with all signatures, each signature in its own file (with strict-form table of DEGs).")
 
 # Считываем аргументы
 args = parser.parse_args()
 
 pert_grp =  args.perturbagen_group
 if args.project_path != "":
-    project_folder_path = args.project_folder_path
+    project_folder_path = args.project_path
 if args.out_folder != "":
     algorithm_results_folder_name = args.out_folder
 
 
-directory = f"/{project_folder_path}/{pert_grp}_inhibitors/signatures"
+directory = f"/{project_folder_path}/{pert_grp}_inhibitors/{str(args.sgn_folder)}"
 l2s2_res = f"/{project_folder_path}/{pert_grp}_inhibitors/L2S2/{algorithm_results_folder_name}"
 
 with os.scandir(directory) as entries:
-    for entry in entries:
+    for entry in sorted(entries, key=lambda x: x.name):
         if entry.is_file():
             print(f"Обрабатываю: {entry.name}")
             
