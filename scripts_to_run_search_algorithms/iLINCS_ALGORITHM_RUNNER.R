@@ -5,6 +5,7 @@
 # perturbagen_group  ---  name of signatures perturbagen's group (compulsory option), e.g. MEK, mTOR, PI3K...
 # --project_path  ---  path to a directory with the whole project
 # --out_folder  ---  NAME of out-folder, where will be located obtained results of this script. the location of this folder has already been determined by the script.
+# --sng_folder --- NAME of a folder with all signatures, each signature in its own file (with strict-form table of DEGs)
 #
 ################################################################
 
