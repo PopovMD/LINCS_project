@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+HNRNPDL	ENSG00000152795	-1.261744	3.688543e-16	3.109442e-13

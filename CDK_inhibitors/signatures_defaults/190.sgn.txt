@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+CLSPN	ENSG00000092853	-1.259225	4.880471e-07	0.0006767586

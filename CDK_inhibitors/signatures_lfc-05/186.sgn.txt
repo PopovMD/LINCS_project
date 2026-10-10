@@ -1,0 +1,2 @@
+gene_name	gene_id	log2FoldChange	pvalue	padj
+RPL41P1	ENSG00000227063	-1.982465	1.160368e-13	9.955958e-11
